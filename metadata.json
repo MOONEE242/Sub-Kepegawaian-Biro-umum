@@ -1,0 +1,7 @@
+{
+  "name": "SIMPEG Papua - Sub Bagian Kepegawaian",
+  "description": "Sistem Informasi Manajemen Kepegawaian Biro Umum & Administrasi Pimpinan Provinsi Papua. Mengelola data ASN, KGB, Pangkat, Gaji, dan Arsip Digital.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

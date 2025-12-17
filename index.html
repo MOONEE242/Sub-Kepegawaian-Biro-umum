@@ -1,0 +1,117 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIMPEG Papua - Sub Bagian Kepegawaian</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            /* Palette Warna User */
+            --c1: #F2F2F2; /* Light Gray */
+            --c2: #A69485; /* Taupe */
+            --c3: #A67153; /* Terracotta */
+            --c4: #734B3D; /* Brown */
+            --c5: #403433; /* Dark Charcoal */
+            
+            --bg-body: var(--c1);
+            --text-primary: var(--c5);
+            --card-bg: rgba(255, 255, 255, 0.75);
+            --border-color: rgba(166, 113, 83, 0.1);
+            --accent: var(--c3);
+            --spotlight-opacity: 0.12;
+        }
+
+        .dark-mode {
+            --bg-body: var(--c5);
+            --text-primary: var(--c1);
+            --card-bg: rgba(64, 52, 51, 0.85);
+            --border-color: rgba(242, 242, 242, 0.1);
+            --accent: var(--c2);
+            --spotlight-opacity: 0.08;
+        }
+
+        body { 
+          font-family: 'Inter', sans-serif; 
+          background-color: var(--bg-body);
+          color: var(--text-primary);
+          transition: background-color 0.8s cubic-bezier(0.4, 0, 0.2, 1), color 0.5s ease;
+          overflow-x: hidden;
+          min-height: 100vh;
+        }
+
+        .glass-panel {
+          background: var(--card-bg);
+          backdrop-filter: blur(25px);
+          -webkit-backdrop-filter: blur(25px);
+          border: 1px solid var(--border-color);
+          box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.08);
+        }
+
+        /* Spotlight Animasi */
+        .spotlight {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            pointer-events: none;
+            z-index: 9999;
+            background: radial-gradient(circle 400px at var(--x, 0) var(--y, 0), rgba(166, 113, 83, var(--spotlight-opacity)), transparent 80%);
+            will-change: background;
+        }
+
+        /* Blobs Bergerak */
+        .blob-container {
+            position: fixed;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index: -1;
+            overflow: hidden;
+            filter: blur(120px);
+            opacity: 0.4;
+            pointer-events: none;
+        }
+        .blob {
+            position: absolute;
+            border-radius: 50%;
+            animation: move 25s infinite alternate ease-in-out;
+            will-change: transform;
+        }
+        .blob-1 { width: 800px; height: 800px; background: var(--c3); top: -20%; left: -10%; }
+        .blob-2 { width: 700px; height: 700px; background: var(--c2); bottom: -10%; right: -10%; animation-duration: 30s; }
+        .blob-3 { width: 600px; height: 600px; background: var(--c4); top: 35%; left: 35%; animation-duration: 40s; opacity: 0.3; }
+
+        @keyframes move {
+            from { transform: translate(0, 0) scale(1) rotate(0deg); }
+            to { transform: translate(100px, 150px) scale(1.1) rotate(180deg); }
+        }
+
+        .font-serif-italic {
+          font-family: 'Instrument Serif', serif;
+          font-style: italic;
+        }
+
+        .custom-scrollbar::-webkit-scrollbar { width: 5px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: transparent; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: var(--c3); border-radius: 10px; }
+    </style>
+<script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "lucide-react": "https://esm.sh/lucide-react@^0.561.0",
+    "recharts": "https://esm.sh/recharts@^3.6.0",
+    "framer-motion": "https://esm.sh/framer-motion@^11.11.11",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3",
+    "docx": "https://esm.sh/docx@9.0.3",
+    "file-saver": "https://esm.sh/file-saver@2.0.5"
+  }
+}
+</script>
+</head>
+<body>
+    <div id="root"></div>
+</body>
+</html>
