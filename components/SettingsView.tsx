@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { AppConfig, AdminCredentials, AuditLog } from '../types';
 import { 
   Settings, Save, Shield, Database, Globe, Eye, EyeOff, Lock, User, 
-  KeyRound, CheckCircle, AlertCircle, ListRestart, History, Search, UploadCloud, DownloadCloud
+  KeyRound, CheckCircle, AlertCircle, ListRestart, History, Search, UploadCloud, DownloadCloud, Server
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -81,9 +81,13 @@ const SettingsView: React.FC<SettingsViewProps> = ({ config, setConfig, credenti
 
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
         <div className="lg:col-span-7 space-y-6">
-          <div className="glass-panel p-10 rounded-[40px] space-y-8">
+          <div className="glass-panel p-10 rounded-[40px] space-y-8 relative overflow-hidden">
+             <div className="absolute top-0 right-0 p-10 opacity-5">
+               <Server size={120} />
+             </div>
+            
             <h3 className="font-black text-[#403433] dark:text-[#F2F2F2] flex items-center gap-3 uppercase text-[10px] tracking-[0.2em] italic font-serif-italic">
-              <Globe size={18} className="text-[#A67153]" /> Profil Instansi
+              <Globe size={18} className="text-[#A67153]" /> Profil Instansi & Sektor
             </h3>
             <div className="space-y-6">
               <div className="space-y-2">
